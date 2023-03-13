@@ -1,0 +1,88 @@
+{
+  "version": "0.1.1",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "engines": {
+    "node": ">=10"
+  },
+  "scripts": {
+    "start": "tsdx watch",
+    "build": "tsdx build",
+    "test": "tsdx test --passWithNoTests",
+    "lint": "tsdx lint",
+    "prepare": "tsdx build",
+    "size": "size-limit",
+    "analyze": "size-limit --why",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
+  },
+  "peerDependencies": {
+    "@chakra-ui/react": "^2.5.1",
+    "@emotion/react": "^11.10.6",
+    "@emotion/styled": "^11.10.6",
+    "framer-motion": "^10.2.5",
+    "react": ">=16",
+    "react-hook-form": "^7.43.5"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "tsdx lint"
+    }
+  },
+  "prettier": {
+    "printWidth": 80,
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "es5"
+  },
+  "name": "chakra-ui-react-hook-form",
+  "author": "Forsect",
+  "keywords": [
+    "react",
+    "react-hook-form",
+    "chakra-ui",
+    "chakra",
+    "form"
+  ],
+  "module": "dist/chakra-ui-react-hook-form.esm.js",
+  "size-limit": [
+    {
+      "path": "dist/chakra-ui-react-hook-form.cjs.production.min.js",
+      "limit": "10 KB"
+    },
+    {
+      "path": "dist/chakra-ui-react-hook-form.esm.js",
+      "limit": "10 KB"
+    }
+  ],
+  "devDependencies": {
+    "@babel/core": "^7.21.0",
+    "@chakra-ui/react": "^2.5.1",
+    "@emotion/react": "^11.10.6",
+    "@emotion/styled": "^11.10.6",
+    "@size-limit/preset-small-lib": "^8.2.4",
+    "@storybook/addon-essentials": "^6.5.16",
+    "@storybook/addon-info": "^5.3.21",
+    "@storybook/addon-links": "^6.5.16",
+    "@storybook/addons": "^6.5.16",
+    "@storybook/react": "^6.5.16",
+    "@types/react": "^18.0.28",
+    "@types/react-dom": "^18.0.11",
+    "babel-loader": "^9.1.2",
+    "framer-motion": "^10.2.5",
+    "husky": "^8.0.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-hook-form": "^7.43.5",
+    "react-is": "^18.2.0",
+    "size-limit": "^8.2.4",
+    "tsdx": "^0.14.1",
+    "tslib": "^2.5.0",
+    "typescript": "^4.9.5"
+  }
+}
