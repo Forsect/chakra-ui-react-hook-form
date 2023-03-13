@@ -2,7 +2,8 @@
 
 Bindings for using [react-hook-form](https://github.com/react-hook-form/react-hook-form) with [Chakra UI](http://next.chakra-ui.com).
 
-[![license](https://badgen.now.sh/badge/license/MIT)](./LICENSE)
+[![alt Version](https://img.shields.io/npm/v/chakra-ui-react-hook-form?color=blue)](https://www.npmjs.com/package/chakra-ui-react-hook-form)
+[![alt License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](./LICENSE)
 ![npm](https://img.shields.io/npm/dt/react-hook-form-chakra-ui)
 
 ## Getting started
