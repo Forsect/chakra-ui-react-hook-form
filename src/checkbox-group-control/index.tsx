@@ -6,7 +6,7 @@ import { BaseProps, FormControl } from '../form-control';
 
 export type CheckboxGroupControlProps<
   TFieldValues extends FieldValues = FieldValues,
-  TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>,
+  TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>
 > = BaseProps<TFieldValues, TName> & {
   checkboxGroupProps?: CheckboxGroupProps;
   stackProps?: StackProps;
@@ -14,7 +14,7 @@ export type CheckboxGroupControlProps<
 
 export const CheckboxGroupControl = <
   TFieldValues extends FieldValues = FieldValues,
-  TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>,
+  TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>
 >({
   control,
   name,

@@ -6,14 +6,14 @@ import { BaseProps, FormControl } from '../form-control';
 
 export type TextareaControlProps<
   TFieldValues extends FieldValues = FieldValues,
-  TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>,
+  TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>
 > = BaseProps<TFieldValues, TName> & {
   textareaProps?: TextareaProps;
 };
 
 export const TextareaControl = <
   TFieldValues extends FieldValues = FieldValues,
-  TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>,
+  TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>
 >({
   control,
   name,

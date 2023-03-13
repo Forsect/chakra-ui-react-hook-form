@@ -15,7 +15,7 @@ type WithRequired<T, K extends keyof T> = T & { [P in K]-?: T[P] };
 
 export type BaseProps<
   TFieldValues extends FieldValues = FieldValues,
-  TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>,
+  TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>
 > = WithRequired<UseControllerProps<TFieldValues, TName>, 'control'> &
   Omit<FormControlProps, 'label'> & {
     label?: React.ReactNode;
@@ -27,7 +27,7 @@ export type BaseProps<
 
 export const FormControl = <
   TFieldValues extends FieldValues = FieldValues,
-  TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>,
+  TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>
 >({
   children,
   control,

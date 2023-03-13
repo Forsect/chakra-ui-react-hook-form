@@ -6,7 +6,7 @@ import { BaseProps, FormControl } from '../form-control';
 
 export type RadioGroupControlProps<
   TFieldValues extends FieldValues = FieldValues,
-  TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>,
+  TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>
 > = BaseProps<TFieldValues, TName> & {
   radioGroupProps?: RadioGroupProps;
   stackProps?: StackProps;
@@ -14,7 +14,7 @@ export type RadioGroupControlProps<
 
 export const RadioGroupControl = <
   TFieldValues extends FieldValues = FieldValues,
-  TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>,
+  TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>
 >({
   control,
   name,
