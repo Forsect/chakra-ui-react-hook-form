@@ -9,18 +9,13 @@ import {
   FormLabel,
   FormLabelProps,
 } from '@chakra-ui/react';
-import {
-  FieldPath,
-  FieldValues,
-  UseControllerProps,
-  useController,
-} from 'react-hook-form';
+import { FieldPath, FieldValues, UseControllerProps, useController } from 'react-hook-form';
 
 type WithRequired<T, K extends keyof T> = T & { [P in K]-?: T[P] };
 
 export type BaseProps<
   TFieldValues extends FieldValues = FieldValues,
-  TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>
+  TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>,
 > = WithRequired<UseControllerProps<TFieldValues, TName>, 'control'> &
   Omit<FormControlProps, 'label'> & {
     label?: React.ReactNode;
@@ -32,7 +27,7 @@ export type BaseProps<
 
 export const FormControl = <
   TFieldValues extends FieldValues = FieldValues,
-  TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>
+  TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>,
 >({
   children,
   control,
@@ -58,11 +53,7 @@ export const FormControl = <
         label
       )}
       {children}
-      {error && (
-        <FormErrorMessage {...errorMessageProps}>
-          {error.message}
-        </FormErrorMessage>
-      )}
+      {error && <FormErrorMessage {...errorMessageProps}>{error.message}</FormErrorMessage>}
       {helperText && typeof helperText === 'string' ? (
         <FormHelperText {...helperTextProps}>{helperText}</FormHelperText>
       ) : (

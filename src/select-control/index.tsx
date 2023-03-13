@@ -6,14 +6,14 @@ import { BaseProps, FormControl } from '../form-control';
 
 export type SelectControlProps<
   TFieldValues extends FieldValues = FieldValues,
-  TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>
+  TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>,
 > = BaseProps<TFieldValues, TName> & {
   selectProps?: SelectProps;
 };
 
 export const SelectControl = <
   TFieldValues extends FieldValues = FieldValues,
-  TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>
+  TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>,
 >({
   control,
   name,

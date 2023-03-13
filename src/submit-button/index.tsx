@@ -2,9 +2,7 @@ import React from 'react';
 import { Button, ButtonProps } from '@chakra-ui/react';
 import { Control, FieldValues, useFormState } from 'react-hook-form';
 
-export type SubmitButtonProps<
-  TFieldValues extends FieldValues = FieldValues
-> = ButtonProps & {
+export type SubmitButtonProps<TFieldValues extends FieldValues = FieldValues> = ButtonProps & {
   control: Control<TFieldValues>;
 };
 
@@ -17,12 +15,7 @@ export const SubmitButton = <TFieldValues extends FieldValues = FieldValues>({
   const { isSubmitting } = useFormState({ control });
 
   return (
-    <Button
-      type="submit"
-      isLoading={isLoading || isSubmitting}
-      colorScheme="teal"
-      {...rest}
-    >
+    <Button type='submit' isLoading={isLoading || isSubmitting} colorScheme='teal' {...rest}>
       {children}
     </Button>
   );

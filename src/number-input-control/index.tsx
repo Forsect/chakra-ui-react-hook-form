@@ -13,7 +13,7 @@ import { BaseProps, FormControl } from '../form-control';
 
 export type NumberInputControlProps<
   TFieldValues extends FieldValues = FieldValues,
-  TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>
+  TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>,
 > = BaseProps<TFieldValues, TName> & {
   numberInputProps?: NumberInputProps;
   showStepper?: boolean;
@@ -22,7 +22,7 @@ export type NumberInputControlProps<
 
 export const NumberInputControl = <
   TFieldValues extends FieldValues = FieldValues,
-  TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>
+  TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>,
 >({
   control,
   name,
@@ -39,12 +39,7 @@ export const NumberInputControl = <
 
   return (
     <FormControl control={control} name={name} label={label} {...rest}>
-      <NumberInput
-        {...field}
-        id={name}
-        isDisabled={isSubmitting}
-        {...numberInputProps}
-      >
+      <NumberInput {...field} id={name} isDisabled={isSubmitting} {...numberInputProps}>
         <NumberInputField name={name} />
         {showStepper && (
           <NumberInputStepper>

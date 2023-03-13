@@ -1,0 +1,10 @@
+.husky/
+public/
+.cache/
+.github/
+.storybook/
+scripts/
+node_modules/
+**/dist/**
+README.md
+.prettierrc

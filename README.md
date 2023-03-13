@@ -34,12 +34,9 @@ const infoFormValidationSchema = Yup.object({
 type InfoFormValues = Yup.InferType<typeof infoFormValidationSchema>;
 
 const InfoForm = () => {
-  const { control, handleSubmit } =
-    useForm <
-    InfoFormValues >
-    {
-      resolver: yupResolver(infoFormValidationSchema),
-    };
+  const { control, handleSubmit } = useForm<InfoFormValues>({
+    resolver: yupResolver(infoFormValidationSchema),
+  });
 
   const onSubmit = (values: InfoFormValues) => {
     console.log({ values });
@@ -50,11 +47,7 @@ const InfoForm = () => {
       <InputControl control={control} name="firstName" label="First name:" />
       <InputControl control={control} name="lastName" label="Last name:" />
       <NumberInputControl control={control} name="age" label="Age:" />
-      <TextareaControl
-        control={control}
-        name="description"
-        label="Description:"
-      />
+      <TextareaControl control={control} name="description" label="Description:" />
       <SubmitButton
         control={control}
         onClick={() => handleSubmit(onSubmit)()}
