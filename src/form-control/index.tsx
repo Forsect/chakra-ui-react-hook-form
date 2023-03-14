@@ -32,6 +32,7 @@ export const FormControl = <
   children,
   control,
   name,
+  rules,
   label,
   labelProps,
   helperText,
@@ -41,7 +42,7 @@ export const FormControl = <
 }: BaseProps<TFieldValues, TName>) => {
   const {
     fieldState: { error, invalid },
-  } = useController({ name, control });
+  } = useController({ name, control, rules });
 
   return (
     <ChakraFormControl isInvalid={invalid} {...rest}>
