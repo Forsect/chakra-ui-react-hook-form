@@ -22,6 +22,7 @@ export type BaseProps<
     labelProps?: FormLabelProps;
     helperText?: React.ReactNode;
     helperTextProps?: FormHelperTextProps;
+    errorMessageText?: React.ReactNode;
     errorMessageProps?: FormErrorMessageProps;
   };
 
@@ -37,6 +38,7 @@ export function FormControl<
   labelProps,
   helperText,
   helperTextProps,
+  errorMessageText,
   errorMessageProps,
   ...rest
 }: BaseProps<TFieldValues, TName>) {
@@ -54,7 +56,15 @@ export function FormControl<
         label
       )}
       {children}
-      {error && <FormErrorMessage {...errorMessageProps}>{error.message}</FormErrorMessage>}
+      {errorMessageText ? (
+        typeof errorMessageText === 'string' ? (
+          <FormErrorMessage {...errorMessageProps}>{errorMessageText}</FormErrorMessage>
+        ) : (
+          errorMessageText
+        )
+      ) : (
+        error && <FormErrorMessage {...errorMessageProps}>{error.message}</FormErrorMessage>
+      )}
       {helperText && typeof helperText === 'string' ? (
         <FormHelperText {...helperTextProps}>{helperText}</FormHelperText>
       ) : (
