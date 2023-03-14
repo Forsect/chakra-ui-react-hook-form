@@ -11,17 +11,10 @@ export type SelectControlProps<
   selectProps?: SelectProps;
 };
 
-export const SelectControl = <
+export function SelectControl<
   TFieldValues extends FieldValues = FieldValues,
   TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>
->({
-  control,
-  name,
-  label,
-  selectProps,
-  children,
-  ...rest
-}: SelectControlProps<TFieldValues, TName>) => {
+>({ control, name, rules, label, selectProps, children, ...rest }: SelectControlProps<TFieldValues, TName>) {
   const {
     field,
     formState: { isSubmitting },
@@ -34,6 +27,6 @@ export const SelectControl = <
       </Select>
     </FormControl>
   );
-};
+}
 
 export default SelectControl;

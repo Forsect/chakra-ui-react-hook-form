@@ -25,7 +25,7 @@ export type BaseProps<
     errorMessageProps?: FormErrorMessageProps;
   };
 
-export const FormControl = <
+export function FormControl<
   TFieldValues extends FieldValues = FieldValues,
   TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>
 >({
@@ -39,7 +39,7 @@ export const FormControl = <
   helperTextProps,
   errorMessageProps,
   ...rest
-}: BaseProps<TFieldValues, TName>) => {
+}: BaseProps<TFieldValues, TName>) {
   const {
     fieldState: { error, invalid },
   } = useController({ name, control, rules });
@@ -62,4 +62,4 @@ export const FormControl = <
       )}
     </ChakraFormControl>
   );
-};
+}

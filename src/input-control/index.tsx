@@ -9,16 +9,10 @@ export type InputControlProps<
   TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>
 > = BaseProps<TFieldValues, TName> & { inputProps?: InputProps };
 
-export const InputControl = <
+export function InputControl<
   TFieldValues extends FieldValues = FieldValues,
   TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>
->({
-  control,
-  name,
-  label,
-  inputProps,
-  ...rest
-}: InputControlProps<TFieldValues, TName>) => {
+>({ control, name, label, inputProps, ...rest }: InputControlProps<TFieldValues, TName>) {
   const {
     field,
     formState: { isSubmitting },
@@ -29,4 +23,4 @@ export const InputControl = <
       <Input {...field} id={name} isDisabled={isSubmitting} {...inputProps} />
     </FormControl>
   );
-};
+}

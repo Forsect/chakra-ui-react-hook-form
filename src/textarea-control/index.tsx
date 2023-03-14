@@ -11,16 +11,10 @@ export type TextareaControlProps<
   textareaProps?: TextareaProps;
 };
 
-export const TextareaControl = <
+export function TextareaControl<
   TFieldValues extends FieldValues = FieldValues,
   TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>
->({
-  control,
-  name,
-  label,
-  textareaProps,
-  ...rest
-}: TextareaControlProps<TFieldValues, TName>) => {
+>({ control, name, label, textareaProps, ...rest }: TextareaControlProps<TFieldValues, TName>) {
   const {
     field,
     formState: { isSubmitting },
@@ -31,4 +25,4 @@ export const TextareaControl = <
       <Textarea {...field} id={name} isDisabled={isSubmitting} {...textareaProps} />
     </FormControl>
   );
-};
+}

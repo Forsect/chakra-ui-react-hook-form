@@ -12,7 +12,7 @@ export type RadioGroupControlProps<
   stackProps?: StackProps;
 };
 
-export const RadioGroupControl = <
+export function RadioGroupControl<
   TFieldValues extends FieldValues = FieldValues,
   TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>
 >({
@@ -23,7 +23,7 @@ export const RadioGroupControl = <
   stackProps,
   children,
   ...rest
-}: RadioGroupControlProps<TFieldValues, TName>) => {
+}: RadioGroupControlProps<TFieldValues, TName>) {
   const {
     field,
     formState: { isSubmitting },
@@ -38,4 +38,4 @@ export const RadioGroupControl = <
       </RadioGroup>
     </FormControl>
   );
-};
+}

@@ -20,7 +20,7 @@ export type NumberInputControlProps<
   children?: React.ReactNode;
 };
 
-export const NumberInputControl = <
+export function NumberInputControl<
   TFieldValues extends FieldValues = FieldValues,
   TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>
 >({
@@ -31,7 +31,7 @@ export const NumberInputControl = <
   children,
   numberInputProps,
   ...rest
-}: NumberInputControlProps<TFieldValues, TName>) => {
+}: NumberInputControlProps<TFieldValues, TName>) {
   const {
     field,
     formState: { isSubmitting },
@@ -51,4 +51,4 @@ export const NumberInputControl = <
       </NumberInput>
     </FormControl>
   );
-};
+}
