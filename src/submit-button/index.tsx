@@ -6,12 +6,12 @@ export type SubmitButtonProps<TFieldValues extends FieldValues = FieldValues> = 
   control: Control<TFieldValues>;
 };
 
-export const SubmitButton = <TFieldValues extends FieldValues = FieldValues>({
+export function SubmitButton<TFieldValues extends FieldValues = FieldValues>({
   children,
   control,
   isLoading,
   ...rest
-}: SubmitButtonProps<TFieldValues>) => {
+}: SubmitButtonProps<TFieldValues>) {
   const { isSubmitting } = useFormState({ control });
 
   return (
@@ -19,4 +19,4 @@ export const SubmitButton = <TFieldValues extends FieldValues = FieldValues>({
       {children}
     </Button>
   );
-};
+}

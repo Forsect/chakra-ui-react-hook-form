@@ -12,7 +12,7 @@ export type CheckboxGroupControlProps<
   stackProps?: StackProps;
 };
 
-export const CheckboxGroupControl = <
+export function CheckboxGroupControl<
   TFieldValues extends FieldValues = FieldValues,
   TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>
 >({
@@ -23,7 +23,7 @@ export const CheckboxGroupControl = <
   stackProps,
   children,
   ...rest
-}: CheckboxGroupControlProps<TFieldValues, TName>) => {
+}: CheckboxGroupControlProps<TFieldValues, TName>) {
   const {
     field: { ref, ...field },
     formState: { isSubmitting },
@@ -38,4 +38,4 @@ export const CheckboxGroupControl = <
       </CheckboxGroup>
     </FormControl>
   );
-};
+}
