@@ -41,7 +41,7 @@ const InfoForm = () => {
       lastName: '',
       description: '',
       age: 0,
-    }
+    },
     resolver: yupResolver(infoFormValidationSchema),
   });
 
