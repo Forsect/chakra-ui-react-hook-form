@@ -36,6 +36,12 @@ type InfoFormValues = Yup.InferType<typeof infoFormValidationSchema>;
 
 const InfoForm = () => {
   const { control, handleSubmit } = useForm<InfoFormValues>({
+    defaultValues: {
+      firstName: '',
+      lastName: '',
+      description: '',
+      age: 0,
+    }
     resolver: yupResolver(infoFormValidationSchema),
   });
 
