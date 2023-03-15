@@ -56,15 +56,16 @@ export function FormControl<
         label
       )}
       {children}
-      {errorMessageText ? (
-        typeof errorMessageText === 'string' ? (
-          <FormErrorMessage {...errorMessageProps}>{errorMessageText}</FormErrorMessage>
+      {error &&
+        (errorMessageText ? (
+          typeof errorMessageText === 'string' ? (
+            <FormErrorMessage {...errorMessageProps}>{errorMessageText}</FormErrorMessage>
+          ) : (
+            errorMessageText
+          )
         ) : (
-          errorMessageText
-        )
-      ) : (
-        error && <FormErrorMessage {...errorMessageProps}>{error.message}</FormErrorMessage>
-      )}
+          <FormErrorMessage {...errorMessageProps}>{error.message}</FormErrorMessage>
+        ))}
       {helperText && typeof helperText === 'string' ? (
         <FormHelperText {...helperTextProps}>{helperText}</FormHelperText>
       ) : (
