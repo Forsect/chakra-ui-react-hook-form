@@ -15,7 +15,7 @@ export function SubmitButton<TFieldValues extends FieldValues = FieldValues>({
   const { isSubmitting } = useFormState({ control });
 
   return (
-    <Button type='submit' isLoading={isLoading || isSubmitting} colorScheme='teal' {...rest}>
+    <Button type='submit' isLoading={isLoading || isSubmitting} colorScheme='blue' {...rest}>
       {children}
     </Button>
   );

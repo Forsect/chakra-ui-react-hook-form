@@ -1,4 +1,3 @@
-import React from 'react';
 import {
   FormControl as ChakraFormControl,
   FormControlProps,
@@ -9,6 +8,7 @@ import {
   FormLabel,
   FormLabelProps,
 } from '@chakra-ui/react';
+import React from 'react';
 import { FieldPath, FieldValues, UseControllerProps, useController } from 'react-hook-form';
 
 type WithRequired<T, K extends keyof T> = T & { [P in K]-?: T[P] };
@@ -35,6 +35,7 @@ export function FormControl<
   name,
   rules,
   label,
+  isInvalid,
   labelProps,
   helperText,
   helperTextProps,
@@ -47,7 +48,7 @@ export function FormControl<
   } = useController({ name, control, rules });
 
   return (
-    <ChakraFormControl isInvalid={invalid} {...rest}>
+    <ChakraFormControl isInvalid={isInvalid ?? invalid} {...rest}>
       {label && typeof label === 'string' ? (
         <FormLabel htmlFor={name} {...labelProps}>
           {label}
@@ -56,7 +57,16 @@ export function FormControl<
         label
       )}
       {children}
-      {error &&
+      {isInvalid &&
+        (errorMessageText ? (
+          typeof errorMessageText === 'string' ? (
+            <FormErrorMessage {...errorMessageProps}>{errorMessageText}</FormErrorMessage>
+          ) : (
+            errorMessageText
+          )
+        ) : null)}
+      {(isInvalid === undefined || isInvalid === null) &&
+        error &&
         (errorMessageText ? (
           typeof errorMessageText === 'string' ? (
             <FormErrorMessage {...errorMessageProps}>{errorMessageText}</FormErrorMessage>

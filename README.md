@@ -50,16 +50,13 @@ const InfoForm = () => {
   };
 
   return (
-    <>
+    <form onSubmit={handleSubmit(onSubmit)}>
       <InputControl control={control} name="firstName" label="First name:" />
       <InputControl control={control} name="lastName" label="Last name:" />
       <NumberInputControl control={control} name="age" label="Age:" />
       <TextareaControl control={control} name="description" label="Description:" />
-      <SubmitButton
-        control={control}
-        onClick={() => handleSubmit(onSubmit)()}
-      />
-    </>
+      <SubmitButton control={control} />
+    </form>
   );
 };
 ```
@@ -72,14 +69,10 @@ const InfoForm = () => {
 - [x] Checkbox (`<CheckboxGroup/>`)
 - [x] Input
 - [x] Number Input
-- [] Pin Input
 - [x] Radio (`<RadioGroup/>`)
 - [x] Select
-- [] Slider
-- [] Switch
 - [x] Textarea
 
 ### Utility Components
 
 - [x] Submit button
-- [] Reset button
