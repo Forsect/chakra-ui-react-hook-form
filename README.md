@@ -65,14 +65,21 @@ const InfoForm = () => {
 
 ### Components
 
-- [x] Button
+- [x] Input (`valueAsNumber`, `valueAsDate`, `setValueAs`)
+- [x] Textarea
 - [x] Checkbox (`<CheckboxGroup/>`)
-- [x] Input
+  - [] Standalone `<Checkbox>`
 - [x] Number Input
 - [x] Radio (`<RadioGroup/>`)
 - [x] Select
-- [x] Textarea
+- [] Progress
+- [] Pin Input
 
 ### Utility Components
 
 - [x] Submit button
+
+### Extras
+
+- [] File input
+- [] Image input (zoom & crop)
