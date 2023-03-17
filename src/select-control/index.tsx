@@ -15,14 +15,11 @@ export function SelectControl<
   TFieldValues extends FieldValues = FieldValues,
   TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>
 >({ control, name, rules, label, selectProps, children, ...rest }: SelectControlProps<TFieldValues, TName>) {
-  const {
-    field,
-    formState: { isSubmitting },
-  } = useController({ name, control });
+  const { field } = useController({ name, control });
 
   return (
     <FormControl control={control} name={name} label={label} {...rest}>
-      <Select {...field} id={name} isDisabled={isSubmitting} {...selectProps}>
+      <Select {...field} id={name} {...selectProps}>
         {children}
       </Select>
     </FormControl>

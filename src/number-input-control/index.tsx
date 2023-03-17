@@ -32,14 +32,11 @@ export function NumberInputControl<
   numberInputProps,
   ...rest
 }: NumberInputControlProps<TFieldValues, TName>) {
-  const {
-    field,
-    formState: { isSubmitting },
-  } = useController({ name, control });
+  const { field } = useController({ name, control });
 
   return (
     <FormControl control={control} name={name} label={label} {...rest}>
-      <NumberInput {...field} id={name} isDisabled={isSubmitting} {...numberInputProps}>
+      <NumberInput {...field} id={name} {...numberInputProps}>
         <NumberInputField name={name} />
         {showStepper && (
           <NumberInputStepper>

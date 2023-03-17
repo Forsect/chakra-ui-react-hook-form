@@ -24,14 +24,11 @@ export function RadioGroupControl<
   children,
   ...rest
 }: RadioGroupControlProps<TFieldValues, TName>) {
-  const {
-    field,
-    formState: { isSubmitting },
-  } = useController({ name, control });
+  const { field } = useController({ name, control });
 
   return (
     <FormControl control={control} name={name} label={label} {...rest}>
-      <RadioGroup {...field} isDisabled={isSubmitting} {...radioGroupProps}>
+      <RadioGroup {...field} {...radioGroupProps}>
         <Stack direction='row' {...stackProps}>
           {children}
         </Stack>

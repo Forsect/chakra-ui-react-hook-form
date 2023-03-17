@@ -26,12 +26,11 @@ export function CheckboxGroupControl<
 }: CheckboxGroupControlProps<TFieldValues, TName>) {
   const {
     field: { ref, ...field },
-    formState: { isSubmitting },
   } = useController({ name, control });
 
   return (
     <FormControl control={control} name={name} label={label} {...rest}>
-      <CheckboxGroup {...field} isDisabled={isSubmitting} {...checkboxGroupProps}>
+      <CheckboxGroup {...field} {...checkboxGroupProps}>
         <Stack pl={6} mt={1} spacing={1} {...stackProps}>
           {children}
         </Stack>

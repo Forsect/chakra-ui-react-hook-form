@@ -15,14 +15,11 @@ export function TextareaControl<
   TFieldValues extends FieldValues = FieldValues,
   TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>
 >({ control, name, label, textareaProps, ...rest }: TextareaControlProps<TFieldValues, TName>) {
-  const {
-    field,
-    formState: { isSubmitting },
-  } = useController({ name, control });
+  const { field } = useController({ name, control });
 
   return (
     <FormControl control={control} name={name} label={label} {...rest}>
-      <Textarea {...field} id={name} isDisabled={isSubmitting} {...textareaProps} />
+      <Textarea {...field} id={name} {...textareaProps} />
     </FormControl>
   );
 }
