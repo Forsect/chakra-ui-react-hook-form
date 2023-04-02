@@ -65,7 +65,7 @@ const InfoForm = () => {
 
 ### Components
 
-- [x] Input (`valueAsNumber`, `valueAsDate`, `setValueAs`)
+- [x] Input (`valueAsNumber`, `valueAsDate`, `setValueAs`, `Left/Right Addon/Element`)
 - [x] Textarea
 - [x] Checkbox (`<CheckboxGroup/>`)
   - [] Standalone `<Checkbox>`
