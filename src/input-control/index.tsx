@@ -53,6 +53,7 @@ export function InputControl<
   rightElement,
   leftElementProps,
   rightElementProps,
+  inputGroupProps,
   ...rest
 }: InputControlProps<TFieldValues, TName>) {
   const {
@@ -74,7 +75,7 @@ export function InputControl<
 
   return (
     <FormControl control={control} name={name} label={label} {...rest}>
-      <InputGroup>
+      <InputGroup {...inputGroupProps}>
         {leftElement && <InputLeftElement {...leftElementProps}>{leftElement}</InputLeftElement>}
         {leftAddon && <InputLeftAddon {...leftAddonProps}>{leftAddon}</InputLeftAddon>}
         <Input onChange={handleChange} {...field} id={name} {...inputProps} />
