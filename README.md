@@ -15,8 +15,8 @@ Or
 `npm i @chakra-ui/react @emotion/react @emotion/styled framer-motion react-hook-form chakra-ui-react-hook-form`
 
 ```jsx
-import * as Yup from 'yup';
-import { yupResolver } from '@hookform/resolvers/yup';
+import { z } from 'zod';
+import { zodResolver } from '@hookform/resolvers/zod';
 import {
   InputControl,
   NumberInputControl,
@@ -25,14 +25,14 @@ import {
 } from 'chakra-ui-react-hook-form';
 import { useForm } from 'react-hook-form';
 
-const infoFormValidationSchema = Yup.object({
-  firstName: Yup.string().required(),
-  lastName: Yup.string().required(),
-  description: Yup.string().required(),
-  age: Yup.number().required(),
+const infoFormValidationSchema = z.object({
+  firstName: z.string(),
+  lastName: z.string(),
+  description: z.string(),
+  age: z.number(),
 });
 
-type InfoFormValues = Yup.InferType<typeof infoFormValidationSchema>;
+type InfoFormValues = z.infer<typeof infoFormValidationSchema>;
 
 const InfoForm = () => {
   const { control, handleSubmit } = useForm<InfoFormValues>({
@@ -42,7 +42,7 @@ const InfoForm = () => {
       description: '',
       age: 0,
     },
-    resolver: yupResolver(infoFormValidationSchema),
+    resolver: zodResolver(infoFormValidationSchema),
   });
 
   const onSubmit = (values: InfoFormValues) => {
@@ -63,17 +63,17 @@ const InfoForm = () => {
 
 ## Roadmap
 
-### Components
+### Chakra Components
 
 - [x] Input (`valueAsNumber`, `valueAsDate`, `setValueAs`, `Left/Right Addon/Element`)
 - [x] Textarea
-- [x] Checkbox (`<CheckboxGroup/>`)
-  - [] Standalone `<Checkbox>`
+- [x] CheckboxGroup
+  - [ ] Checkbox (Standalone `<Checkbox />`)
 - [x] Number Input
 - [x] Radio (`<RadioGroup/>`)
 - [x] Select
-- [] Progress
-- [] Pin Input
+- [ ] Progress
+- [ ] Pin Input
 
 ### Utility Components
 
@@ -81,5 +81,6 @@ const InfoForm = () => {
 
 ### Extras
 
-- [] File input
-- [] Image input (zoom & crop)
+- [ ] Select (using `chakra-react-select`)
+- [ ] File input
+- [ ] Image input (zoom & crop)
